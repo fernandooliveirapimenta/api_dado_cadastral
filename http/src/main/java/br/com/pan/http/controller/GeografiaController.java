@@ -4,7 +4,10 @@ import br.com.pan.domain.Endereco;
 import br.com.pan.domain.Estado;
 import br.com.pan.domain.Municipio;
 import br.com.pan.usecase.*;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.HttpStatusCodeException;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
 import java.util.List;
@@ -19,14 +22,14 @@ public class GeografiaController {
 
     public GeografiaController(ConsultarCep consultarCep,
                                ConsultarEstados consultarEstados,
-                               ConsultarMunicipios consultarMunicipios) {
+                               ConsultarMunicipios consultarMunicipios ) {
         this.consultarCep = consultarCep;
         this.consultarEstados = consultarEstados;
         this.consultarMunicipios = consultarMunicipios;
     }
 
     @GetMapping(path = "/cep/{cep}")
-    public Endereco consultarCep(@PathVariable String cep) {
+    public Endereco consultarCep(@PathVariable final String cep) throws HttpStatusCodeException {
         return consultarCep.consultarCep(cep);
     }
 
@@ -36,7 +39,7 @@ public class GeografiaController {
     }
 
     @GetMapping(path = "/estados/{id}/municipios")
-    public List<Municipio> municipios(@PathVariable String id) {
+    public List<Municipio> municipios(@PathVariable final String id) {
         return consultarMunicipios.municipios(id);
     }
 

@@ -1,7 +1,9 @@
 package br.com.pan.usecase;
 
 import br.com.pan.domain.Endereco;
+import br.com.pan.usecase.exception.RegraDeNegocioExeption;
 import br.com.pan.usecase.port.ApiGeografiaInterface;
+import static br.com.pan.usecase.util.StringUtil.normalize;
 
 public class ConsultarCep {
 
@@ -12,7 +14,13 @@ public class ConsultarCep {
     }
 
     public Endereco consultarCep(String cep) {
-        //todo validar cep
-        return  apiGeografiaInterface.consultarCep(cep);
+        if(cep == null || validar(normalize(cep)) ) {
+            throw new RegraDeNegocioExeption(String.format("Cep inválido: %s", cep));
+        }
+        return  apiGeografiaInterface.consultarCep(normalize(cep));
+    }
+
+    private boolean validar(String cep) {
+        return cep.length() != 8;
     }
 }

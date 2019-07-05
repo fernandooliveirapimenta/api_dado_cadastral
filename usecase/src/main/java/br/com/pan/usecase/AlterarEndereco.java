@@ -2,6 +2,7 @@ package br.com.pan.usecase;
 
 import br.com.pan.domain.Cliente;
 import br.com.pan.domain.Endereco;
+import br.com.pan.usecase.exception.RegraDeNegocioExeption;
 import br.com.pan.usecase.port.ClienteRepositoryInterface;
 
 public class AlterarEndereco {
@@ -13,7 +14,11 @@ public class AlterarEndereco {
     }
 
     public void alterarEndereco(String cpf, Endereco endereco){
-        //todo validacao
+        if(cpf == null) {
+            throw new RegraDeNegocioExeption("Cpf obrigatório");
+        } else if(endereco == null) {
+            throw new RegraDeNegocioExeption("Endereco obrigatório");
+        }
         Cliente cliente = clienteRepositoryInterface.consultarCliente(cpf);
 //        cliente.
         clienteRepositoryInterface.alterarEndereco(cliente);

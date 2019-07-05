@@ -1,4 +1,16 @@
 package br.com.pan.domain;
 
-public class Municipio {
+import java.io.Serializable;
+
+public class Municipio implements Serializable {
+
+    private String nome;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 }
