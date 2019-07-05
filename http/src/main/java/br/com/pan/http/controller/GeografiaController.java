@@ -4,10 +4,8 @@ import br.com.pan.domain.Endereco;
 import br.com.pan.domain.Estado;
 import br.com.pan.domain.Municipio;
 import br.com.pan.usecase.*;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.HttpStatusCodeException;
-import org.springframework.web.client.RestTemplate;
 
 import java.util.Date;
 import java.util.List;

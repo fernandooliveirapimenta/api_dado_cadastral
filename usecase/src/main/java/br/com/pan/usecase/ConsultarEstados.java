@@ -3,6 +3,7 @@ package br.com.pan.usecase;
 import br.com.pan.domain.Estado;
 import br.com.pan.usecase.port.ApiGeografiaInterface;
 
+import java.util.List;
 import java.util.TreeSet;
 
 public class ConsultarEstados {
@@ -14,7 +15,11 @@ public class ConsultarEstados {
     }
 
     public TreeSet<Estado> estados() {
-        return  apiGeografiaInterface.estados();
-        // todo ordenar sp e rj
+
+        List<Estado> estados = apiGeografiaInterface.estados();
+
+        //Ordenando com prioridade
+        return new TreeSet<>(estados);
+
     }
 }

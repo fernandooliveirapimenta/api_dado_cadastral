@@ -23,7 +23,7 @@ public interface ApiGeografiaInterface {
      *   respectivamente;
      * • Os demais estados devem estar ordenados em ordem alfabética.
      */
-    TreeSet<Estado> estados();
+    List<Estado> estados();
 
     /**
      * Cenário 4 – Consultar Municípios

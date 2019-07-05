@@ -6,6 +6,6 @@ public class StringUtil {
         if(valor == null) {
             return null;
         }
-        return valor.replaceAll("[.-]", "");
+        return valor.replaceAll("\\D", "");
     }
 }
