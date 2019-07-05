@@ -5,10 +5,12 @@ import java.io.Serializable;
 public class Endereco implements Serializable {
 
     private String id;
-    private String logradouro;
+    private String logradouro; //rua
     private String bairro;
-    private String localidade;
+    private String localidade; //municipio
     private String uf;
+    private String cep;
+    private String numero;
 
     public String getId() {
         return id;
@@ -50,6 +52,22 @@ public class Endereco implements Serializable {
         this.uf = uf;
     }
 
+    public String getCep() {
+        return cep;
+    }
+
+    public void setCep(String cep) {
+        this.cep = cep;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+
+    public void setNumero(String numero) {
+        this.numero = numero;
+    }
+
 
     public static final class EnderecoBuilder {
         private Endereco endereco;
@@ -84,6 +102,16 @@ public class Endereco implements Serializable {
 
         public EnderecoBuilder withUf(String uf) {
             endereco.setUf(uf);
+            return this;
+        }
+
+        public EnderecoBuilder withCep(String cep) {
+            endereco.setCep(cep);
+            return this;
+        }
+
+        public EnderecoBuilder withNumero(String numero) {
+            endereco.setNumero(numero);
             return this;
         }
 

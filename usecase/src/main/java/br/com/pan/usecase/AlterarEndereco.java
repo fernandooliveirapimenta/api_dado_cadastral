@@ -20,7 +20,7 @@ public class AlterarEndereco {
             throw new RegraDeNegocioExeption("Endereco obrigatório");
         }
         Cliente cliente = clienteRepositoryInterface.consultarCliente(cpf);
-//        cliente.
+        cliente.setEndereco(endereco);
         clienteRepositoryInterface.alterarEndereco(cliente);
     }
 }
