@@ -27,6 +27,25 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+        <dependency>
+            <groupId>br.com.pan</groupId>
+            <artifactId>domain</artifactId>
+            <version>${domain}</version>
+        </dependency>
+
+		<dependency>
+			<groupId>br.com.pan</groupId>
+			<artifactId>usecase</artifactId>
+			<version>${usecase}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>br.com.pan</groupId>
+			<artifactId>db</artifactId>
+			<version>${db}</version>
+		</dependency>
+
 	</dependencies>
 
 	<build>

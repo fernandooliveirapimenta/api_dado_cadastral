@@ -9,6 +9,12 @@
         <version>2.1.6.RELEASE</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
+    <properties>
+        <domain>1.0-SNAPSHOT</domain>
+        <usecase>1.0-SNAPSHOT</usecase>
+        <db>1.0-SNAPSHOT</db>
+        <http>1.0-SNAPSHOT</http>
+    </properties>
     <packaging>pom</packaging>
     <groupId>br.com.pan</groupId>
     <artifactId>api_dado_cadastral</artifactId>
