@@ -16,8 +16,8 @@ public class AlterarEndereco {
     public void alterarEndereco(String cpf, Endereco endereco){
         if(cpf == null) {
             throw new RegraDeNegocioExeption("Cpf obrigatório");
-        } else if(endereco == null) {
-            throw new RegraDeNegocioExeption("Endereco obrigatório");
+        } else if(endereco == null || !endereco.isValido()) {
+            throw new RegraDeNegocioExeption("Endereco inválido");
         }
         Cliente cliente = clienteRepositoryInterface.consultarCliente(cpf);
         cliente.setEndereco(endereco);

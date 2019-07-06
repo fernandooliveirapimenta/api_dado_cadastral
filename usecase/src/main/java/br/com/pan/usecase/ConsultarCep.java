@@ -14,13 +14,13 @@ public class ConsultarCep {
     }
 
     public Endereco consultarCep(String cep) {
-        if(cep == null || validar(normalize(cep)) ) {
+        if(!isCepValido(cep)) {
             throw new RegraDeNegocioExeption(String.format("Cep inválido: %s", cep));
         }
         return  apiGeografiaInterface.consultarCep(normalize(cep));
     }
 
-    private boolean validar(String cep) {
-        return cep.length() != 8;
+     boolean isCepValido(String cep) {
+        return cep != null && normalize(cep).length() == 8;
     }
 }

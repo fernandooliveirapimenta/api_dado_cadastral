@@ -1,45 +1,56 @@
-## Desafio
-`Utilizado Clean Architecture 
-    dsgsd
-`
-
-
 ### Dependência
-
-Java 8
-
+    * Java 8
+    * Maven 3.5 +
+    
+### Arquitetura 
+    * domain: classes de modelos
+    * usecase: implementação das regras de negócio
+    * http: api Restfull spring boot exposto na porta 8080 que liga os demais módulos.
+    * db: banco de dados em memória
+    
 ### Compilar
-
 `mvn clean install -U`
 
-### Rodar Modulo http
-
+### Rodar API
 `java -jar http/target/http.jar`
 
+### Testar
+`mvn test`
 
-#### Create User
+#### Importar no postman
+`api_dados_cadastrais.postman_collection.json`
+
+#### Consultar Cliente
 ```
-POST: http://localhost:8080/users
+GET: http://localhost:8080/cliente/{cpf}
+```
+
+#### Consultar CEP
+```
+GET: http://localhost:8080/cep/{cep}
+```
+
+#### Consultar Estados
+```
+GET: http://localhost:8080/estados
+```
+
+#### Consultar Municípios
+```
+GET: http://localhost:8080/estados/{idEstado}/municipios
+```
+
+#### Alterar Endereço
+```
+PUT: http://localhost:8080/cliente/{cpf}/endereco
 Body:
 {
-  "email": "test@test.com",
-  "password": "mypassword",
-  "lastName": "Doe",  
-  "firstName": "John"
+    id: "d7666sEddg888000fhhghgj",
+    logradouro: "Rua Panorama",
+    bairro: "Jardim Santo Eduardo"
+    localidade: "Embu das Artes"
+    uf: "SP"
+    cep: "06823-250"
+    numero: "203"
 }
-```
-
-#### Get all users
-```
-GET: http://localhost:8080/users
-```
-
-#### Get one user
-```
-GET: http://localhost:8080/users/0675171368e011e882d5acde48001122
-```
-
-#### Login
-```
-GET: http://localhost:8080/login?email=test@test.com&password=mypassword
 ```

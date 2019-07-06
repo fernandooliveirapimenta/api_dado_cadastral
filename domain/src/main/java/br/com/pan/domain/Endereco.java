@@ -68,6 +68,10 @@ public class Endereco implements Serializable {
         this.numero = numero;
     }
 
+    public boolean isValido() {
+        return logradouro != null && numero != null && uf != null && cep != null;
+    }
+
 
     public static final class EnderecoBuilder {
         private Endereco endereco;

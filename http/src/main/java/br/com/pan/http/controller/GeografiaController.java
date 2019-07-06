@@ -9,7 +9,6 @@ import org.springframework.web.client.HttpStatusCodeException;
 
 import java.util.Date;
 import java.util.List;
-import java.util.TreeSet;
 
 @RestController
 public class GeografiaController {
@@ -32,7 +31,7 @@ public class GeografiaController {
     }
 
     @GetMapping(path = "/estados")
-    public TreeSet<Estado> estados() {
+    public List<Estado> estados() {
        return consultarEstados.estados();
     }
 

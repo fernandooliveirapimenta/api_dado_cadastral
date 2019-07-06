@@ -23,7 +23,7 @@ public class ClienteController {
         return consultarCliente.consultarCliente(cpf);
     }
 
-    @PutMapping(path = "/{cpf}")
+    @PutMapping(path = "/{cpf}/endereco")
     public void alterarEndereco(@PathVariable String cpf, @RequestBody Endereco endereco) {
        alterarEndereco.alterarEndereco(cpf, endereco);
     }

@@ -14,10 +14,10 @@ public class ConsultarMunicipios {
         this.apiGeografiaInterface = apiGeografiaInterface;
     }
 
-    public List<Municipio> municipios(String estado) {
-        if(estado == null) {
-            throw new RegraDeNegocioExeption("Estado obrigatório");
+    public List<Municipio> municipios(String idEstado) {
+        if(idEstado == null || idEstado.isEmpty()) {
+            throw new RegraDeNegocioExeption("Id Estado obrigatório");
         }
-        return  apiGeografiaInterface.municipios(estado);
+        return  apiGeografiaInterface.municipios(idEstado);
     }
 }
