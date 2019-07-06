@@ -10,17 +10,17 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <properties>
-        <domain>1.0-SNAPSHOT</domain>
-        <usecase>1.0-SNAPSHOT</usecase>
-        <db>1.0-SNAPSHOT</db>
-        <http>1.0-SNAPSHOT</http>
+        <domain>${project.version}</domain>
+        <usecase>${project.version}</usecase>
+        <db>${project.version}</db>
+        <http>${project.version}</http>
         <junit>4.12</junit>
         <mockito>2.28.2</mockito>
     </properties>
     <packaging>pom</packaging>
     <groupId>br.com.pan</groupId>
     <artifactId>api_dado_cadastral</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0.0</version>
 
     <modules>
         <module>http</module>
