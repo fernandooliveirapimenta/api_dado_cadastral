@@ -1,0 +1,188 @@
+{
+	"info": {
+		"_postman_id": "c78c0a8d-04dc-5407-44f8-936bb56bdb4f",
+		"name": "api_dados_cadastrais",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "cliente",
+			"item": [
+				{
+					"name": "listar",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente/6458546685",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"6458546685"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "alterarEndereco",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"id\": \"ea877d85-0489-4572-b4df-467167d0e709\",\n        \"bairro\": \" Eduardo 2\",\n        \"cep\": \"06823250\"\n    }"
+						},
+						"url": {
+							"raw": "http://localhost:8080/cliente/43743772809/endereco",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cliente",
+								"43743772809",
+								"endereco"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "geografia",
+			"item": [
+				{
+					"name": "consultarCep",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/cep/06823250",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"cep",
+								"06823250"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estados",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "municipios",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/estados/11/municipios",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estados",
+								"11",
+								"municipios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "helth",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "estados copy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:8080/estados",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"estados"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
