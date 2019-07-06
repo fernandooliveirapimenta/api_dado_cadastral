@@ -54,3 +54,8 @@ Body:
     numero: "203"
 }
 ```
+
+#### HTTP Trace
+```
+GET: http://localhost:8080/actuator/httptrace
+```
