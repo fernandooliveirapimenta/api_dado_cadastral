@@ -12,6 +12,20 @@
         <maven.compiler.target>1.8</maven.compiler.target>
         <maven.compiler.source>1.8</maven.compiler.source>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>br.com.pan</groupId>
+            <artifactId>domain</artifactId>
+            <version>${domain}</version>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>br.com.pan</groupId>
+            <artifactId>usecase</artifactId>
+            <version>${usecase}</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 
     <artifactId>db</artifactId>
     <build>
